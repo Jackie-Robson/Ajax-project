@@ -12,10 +12,19 @@ function loadData() {
     $nytElem.text("");
 
     // load streetview
-
-    // YOUR CODE GOES HERE!
+    var street = $('#street').val();
+    var city = $('#city').val();
+    var address = street + ", " + city;
+    var addressURL = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location='+ address +'';
+    $('body').append('<img class= "bgimg" src="'+ addressURL +'">')
 
     return false;
+
+    $('#form-container').submit(loadData);
+
+
+
+
+
 };
 
-$('#form-container').submit(loadData);
